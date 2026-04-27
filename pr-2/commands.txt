@@ -1,0 +1,111 @@
+# Initialize a new Git repository
+git init
+
+# Check current status (untracked files)
+git status
+
+# Add all files to staging area
+git add .
+
+# Commit files with message
+git commit -m "Initial commit - Flask app"
+
+
+# Add remote repository (replace with your repo URL)
+git remote add origin https://github.com/your-username/flask-git-app.git
+
+# Rename default branch to main
+git branch -M main
+
+# Push code to GitHub
+git push -u origin main
+
+
+# Create a new branch and switch to it
+git checkout -b feature-ui
+
+# Check current branch
+git branch
+
+# Add changes after modifying files
+git add .
+
+# Commit changes in branch
+git commit -m "Added UI feature"
+
+# Push branch to GitHub
+git push origin feature-ui
+
+
+# Switch back to main branch
+git checkout main
+
+# Merge feature branch into main
+git merge feature-ui
+
+# Push updated main branch
+git push origin main
+
+
+# Create first branch
+git checkout -b branch1
+
+# (Edit same line in a file manually)
+
+# Commit branch1 changes
+git add .
+git commit -m "Branch1 changes"
+
+# Switch to main
+git checkout main
+
+# Create second branch
+git checkout -b branch2
+
+# (Edit same line differently)
+
+# Commit branch2 changes
+git add .
+git commit -m "Branch2 changes"
+
+
+# Switch to main branch
+git checkout main
+
+# Merge branch1
+git merge branch1
+
+# Merge branch2 (this will cause conflict)
+git merge branch2
+
+
+# Open file and manually fix conflict
+
+# After resolving, stage file
+git add .
+
+# Commit resolved version
+git commit -m "Resolved merge conflict"
+
+
+# Show commit history
+git log
+
+# Show changes between commits
+git diff
+
+# Show current status
+git status
+
+
+# Show all branches
+git branch
+
+# Delete a branch
+git branch -d branch1
+
+# Pull latest changes from GitHub
+git pull origin main
+
+# Clone repository (if needed)
+git clone https://github.com/your-username/flask-git-app.git

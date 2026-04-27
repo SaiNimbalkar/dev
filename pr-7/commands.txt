@@ -1,0 +1,20 @@
+# Initialize git repository
+git init
+
+# Add all files to staging area
+git add .
+
+# Commit the code
+git commit -m "Initial commit for DevOps workflow"
+
+# Add your GitHub repository URL
+git remote add origin https://github.com/YOUR_USERNAME/devops-project.git
+
+# Rename branch to main
+git branch -M main
+
+# Push code to GitHub
+git push -u origin main
+
+# Open in browser
+http://localhost:5000

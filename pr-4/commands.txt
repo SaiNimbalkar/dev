@@ -1,0 +1,57 @@
+# Build Docker image from Dockerfile
+docker build -t flask-k8s-app .
+
+# Check images created
+docker images
+
+# Run container in background
+docker run -d -p 5000:5000 flask-k8s-app
+
+# Check running containers
+docker ps
+
+http://localhost:5000
+
+# Tag image with your DockerHub username
+docker tag flask-k8s-app yourusername/flask-k8s-app
+
+# Push image to DockerHub
+docker push yourusername/flask-k8s-app
+
+# Check cluster status
+kubectl cluster-info
+
+# Create deployment in Kubernetes
+kubectl apply -f deployment.yaml
+
+# Create service in Kubernetes
+kubectl apply -f service.yaml
+
+# Check pods (IMPORTANT for exam)
+kubectl get pods
+
+# Check deployments
+kubectl get deployments
+
+# Check services
+kubectl get services
+
+# Scale application to 5 pods
+kubectl scale deployment flask-deployment --replicas=5
+
+# Check pods again (should be 5)
+kubectl get pods
+
+
+
+# Describe pod details
+kubectl describe pod <pod-name>
+
+# View logs of pod
+kubectl logs <pod-name>
+
+# Delete deployment
+kubectl delete -f deployment.yaml
+
+# Delete service
+kubectl delete -f service.yaml

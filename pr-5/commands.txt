@@ -1,0 +1,11 @@
+npm init -y
+# Create fresh package.json automatically
+
+npm install selenium-webdriver
+# Install Selenium library for automation testing
+
+npm install chromedriver
+# Installs compatible ChromeDriver (avoids manual setup issues)
+
+node test/test.js
+# Executes automated Selenium test

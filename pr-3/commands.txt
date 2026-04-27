@@ -1,0 +1,20 @@
+# Initialize git repository
+git init
+
+# Add all files to staging
+git add .
+
+# Commit changes
+git commit -m "Initial commit for deployment pipeline"
+
+# Add remote repository (replace with your repo URL)
+git remote add origin https://github.com/your-username/pr3.git
+
+# Push code to GitHub
+git push -u origin main
+
+
+# Build docker image from Dockerfile
+docker build -t flask-deploy-app .
+
+

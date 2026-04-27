@@ -1,0 +1,72 @@
+# Check cluster info (master + services)
+kubectl cluster-info
+
+# Check nodes available in cluster
+kubectl get nodes
+
+# Build Docker image for your Flask app
+docker build -t flask-k8s-app .
+
+# Verify image is created
+docker images
+
+# Apply deployment YAML file
+kubectl apply -f deployment.yaml
+
+# Check deployment status
+kubectl get deployments
+
+# Check running pods created by deployment
+kubectl get pods
+
+# Detailed info about deployment
+kubectl describe deployment flask-deployment
+
+# Apply service YAML
+kubectl apply -f service.yaml
+
+# Check services
+kubectl get services
+
+# Open application in browser using Minikube
+minikube service flask-service
+
+# Watch pods in real-time
+kubectl get pods -w
+
+# View logs of a specific pod
+kubectl logs <pod-name>
+
+# Execute inside container (debugging)
+kubectl exec -it <pod-name> -- /bin/bash
+
+# Scale application to 5 replicas (automation feature)
+kubectl scale deployment flask-deployment --replicas=5
+
+# Verify scaling (should show 5 pods)
+kubectl get pods
+
+# Build new version of Docker image
+docker build -t flask-k8s-app:v2 .
+
+# Update deployment with new image (zero downtime)
+kubectl set image deployment/flask-deployment flask-container=flask-k8s-app:v2
+
+# Check rollout status
+kubectl rollout status deployment/flask-deployment
+
+# View rollout history
+kubectl rollout history deployment/flask-deployment
+
+# Rollback to previous working version
+kubectl rollout undo deployment/flask-deployment
+
+# Check all resources
+kubectl get all
+
+# Describe pod for debugging
+kubectl describe pod <pod-name>
+
+# Check logs again
+kubectl logs <pod-name>
+

@@ -1,0 +1,46 @@
+# Initialize git repository
+git init
+
+# Add all files to staging
+git add .
+
+# Commit files
+git commit -m "Initial commit"
+
+# Add your GitHub repository URL (IMPORTANT: use your real repo)
+git remote add origin https://github.com/SaiNimbalkar/pr1.git
+
+# Push code to GitHub
+git push -u origin main
+
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Flask app locally
+python app.py
+
+# Open in browser:
+# http://localhost:5000
+
+
+# Build Docker image
+docker build -t registration-app .
+
+# Check images
+docker images
+
+# Run container
+docker run -d -p 5000:5000 registration-app
+
+# Check running containers
+docker ps
+
+# Stop container (use container ID)
+docker stop <container_id>
+
+# Remove container (optional)
+docker rm <container_id>
+
+# Remove image (optional)
+docker rmi registration-app
